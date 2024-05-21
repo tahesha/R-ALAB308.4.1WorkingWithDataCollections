@@ -160,3 +160,22 @@ function manipulateData(data) {
 const { manipulatedData, averageAge } = manipulateData(transformedData);
 console.log(manipulatedData);
 console.log("Average Age:", averageAge);
+
+
+
+//Full Circle - Part 5
+function convertToCSV(data) {
+    const headings = Object.keys(data[0]);
+    const csvArray = [headings.join(",")];
+    data.forEach(obj => {
+        const values = headings.map(heading => obj[heading]);
+        csvArray.push(values.join(","));
+    });
+    const csvString = csvArray.join("\n");
+    return csvString;
+}
+
+// Example of usage; red because previously declared. Keeping for future reference.
+const csvString = convertToCSV(manipulatedData);
+console.log(csvString);
+
