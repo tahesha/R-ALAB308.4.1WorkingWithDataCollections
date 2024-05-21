@@ -116,5 +116,22 @@ const csvArray = parseCSVToArray(csvString);
 console.log(csvArray);
 
 
+//Part 3: Transforming Data
+function transformData(csvArray) {
+    const headings = csvArray[0];
+    const dataRows = csvArray.slice(1);
+    const transformedData = dataRows.map(row => {
+        const obj = {};
+        headings.forEach((heading, index) => {
+            obj[heading.toLowerCase()] = row[index];
+        });
+        return obj;
+    });
+    return transformedData;
+}
+
+// Example of usage
+const transformedData = transformData(csvArray);
+console.log(transformedData);
 
 
