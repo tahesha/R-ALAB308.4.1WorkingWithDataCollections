@@ -178,4 +178,3 @@ function convertToCSV(data) {
 // Example of usage; red because previously declared. Keeping for future reference.
 const csvString = convertToCSV(manipulatedData);
 console.log(csvString);
-
