@@ -135,3 +135,28 @@ const transformedData = transformData(csvArray);
 console.log(transformedData);
 
 
+//Part 4: Sorting and Manipulating Data
+function manipulateData(data) {
+    // Remove the last element from the sorted array
+    data.pop();
+
+    // Insert object at index 1
+    data.splice(1, 0, { id: "48", name: "Barry", occupation: "Runner", age: "25" });
+
+    // Add object to the end of the array
+    data.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" });
+
+    // Calculate average age
+    let totalAge = 0;
+    data.forEach(obj => {
+        totalAge += parseInt(obj.age);
+    });
+    const averageAge = totalAge / data.length;
+
+    return { manipulatedData: data, averageAge };
+}
+
+// Example of usage
+const { manipulatedData, averageAge } = manipulateData(transformedData);
+console.log(manipulatedData);
+console.log("Average Age:", averageAge);
