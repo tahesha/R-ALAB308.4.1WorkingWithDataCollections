@@ -79,4 +79,42 @@ const nextPrime = findNextPrime(n);
 console.log(`The next prime number after ${n} is: ${nextPrime}`);
 
 
+//Part 2: Expanding Functionality; modifying the parseCSV function
+//Parse CSV to Extract Headings
+
+function extractHeadings(csvString) {
+    const rows = csvString.split("\n");
+    const headings = rows[0].split(",");
+    return headings;
+}
+
+//Parse CSV to Extract Headings
+function extractHeadings(csvString) {
+    const rows = csvString.split("\n");
+    const headings = rows[0].split(",");
+    return headings;
+}
+
+//Parse CSV to Extract Data Rows
+function extractDataRows(csvString) {
+    const rows = csvString.split("\n").slice(1);
+    const dataRows = rows.map(row => row.split(","));
+    return dataRows;
+}
+
+
+//Combine Functions to Create Two-Dimensional Array
+function parseCSVToArray(csvString) {
+    const headings = extractHeadings(csvString);
+    const dataRows = extractDataRows(csvString);
+    const result = [headings, ...dataRows];
+    return result;
+}
+
+// Example of usage
+const csvArray = parseCSVToArray(csvString);
+console.log(csvArray);
+
+
+
 
